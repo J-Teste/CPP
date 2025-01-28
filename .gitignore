@@ -1,0 +1,5 @@
+# Fichiers système de macOS
+.DS_Store
+
+# Paramètres de Visual Studio Code
+.vscode/
