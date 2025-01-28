@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 12:30:46 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/01/28 12:50:27 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:24:05 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int Account::getNbDeposits(void)
 
 int Account::getNbWithdrawals(void)
 {
-	return (Account::_totalNbDeposits);
+	return (Account::_totalNbWithdrawals);
 }
 
 void Account::displayAccountsInfos(void)
