@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/10 14:51:08 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/01/29 13:22:13 by hakgyver         ###   ########.fr       */
+/*   Created: 2025/01/29 12:17:09 by hakgyver          #+#    #+#             */
+/*   Updated: 2025/01/29 15:06:36 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cctype>
+#include "../inc/Zombie.hpp"
 
-int main(int argc, char **argv)
+void Zombie::announce(void)
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		for (int i = 1; i < argc; i++)
-		{
-			for (int j = 0; argv[i][j]; j++)
-				std::cout << (char)toupper(argv[i][j]);
-		}
-		std::cout << std::endl;
-	}
-	return(0);
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+Zombie::Zombie(std::string name)
+{
+	this->_name = name;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << this->_name << " has just tripped and what was left of his brain has shattered on the ground..." << std::endl;
 }

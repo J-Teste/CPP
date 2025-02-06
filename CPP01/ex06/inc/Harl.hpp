@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/10 14:51:08 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/01/29 13:22:13 by hakgyver         ###   ########.fr       */
+/*   Created: 2025/02/06 11:36:24 by hakgyver          #+#    #+#             */
+/*   Updated: 2025/02/06 13:06:50 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cctype>
+#ifndef HARL_HPP
+#define HARL_HPP
 
-int main(int argc, char **argv)
+#include <string>
+#include <iostream>
+
+class Harl
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		for (int i = 1; i < argc; i++)
-		{
-			for (int j = 0; argv[i][j]; j++)
-				std::cout << (char)toupper(argv[i][j]);
-		}
-		std::cout << std::endl;
-	}
-	return(0);
-}
+private:
+	void debug( void );
+	void info( void );
+	void warning( void );
+	void error( void );
+public:
+	Harl();
+	~Harl();
+	void complain( std::string level );
+};
+
+
+
+#endif

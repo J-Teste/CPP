@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/10 14:51:08 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/01/29 13:22:13 by hakgyver         ###   ########.fr       */
+/*   Created: 2025/02/06 11:35:23 by hakgyver          #+#    #+#             */
+/*   Updated: 2025/02/06 13:29:06 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cctype>
+#include "../inc/Harl.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		for (int i = 1; i < argc; i++)
-		{
-			for (int j = 0; argv[i][j]; j++)
-				std::cout << (char)toupper(argv[i][j]);
-		}
-		std::cout << std::endl;
-	}
-	return(0);
+	Harl dull_boy;
+	std::cout << "\n-- DEBUG LEVEL --" << std::endl;
+	dull_boy.complain("DEBUG");
+	std::cout << "-- INFO LEVEL --" << std::endl;
+	dull_boy.complain("INFO");
+	std::cout << "-- WARNING LEVEL --" << std::endl;
+	dull_boy.complain("WARNING");
+	std::cout << "-- ERROR LEVEL --" << std::endl;
+	dull_boy.complain("ERROR");
+	return 0;
 }

@@ -1,6 +1,6 @@
 NAME := Account
 CXX := c++
-FLAGS := -Wall -Wextra -Werror -std=c++98
+FLAGS := -Wall -Wextra -Werror -std=c++98 -pedantic
 SRCDIR := ./src
 OBJDIR := obj
 SRC := $(wildcard $(SRCDIR)/*.cpp)
