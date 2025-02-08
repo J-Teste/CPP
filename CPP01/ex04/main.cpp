@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 14:40:59 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/02/06 10:16:00 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/02/08 13:44:19 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <fstream>
 
-void	find_and_replace(const std::string file_content, const std::string file_name, const std::string old_word, const std::string new_word)
+void	find_and_replace(const std::string &file_content, const std::string &file_name, const std::string &old_word, const std::string &new_word)
 {
 	std::ofstream outfile((file_name + ".replace").c_str());
 	if (!outfile)
