@@ -29,7 +29,6 @@ $(NAME): $(OBJ)
 	@echo "🎉✨ Build Complete! ✨🎉"
 	@echo "🚀 $(NAME) is ready to roll, compiled with: 🔧 $(FLAGS) 🔧"
 
-
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
 	@$(CXX) $(FLAGS) -c $< -o $@
 
