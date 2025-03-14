@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 12:53:55 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/07 14:44:33 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:42:36 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 	if (this != &other)
 	{
 		ClapTrap::operator=(other);
-		_isGuarding = other._isGuarding;
+		_isGuarding = other._isGuarding; 
 	}
 	return (*this);
 }
