@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:24:57 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/19 09:35:29 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:23:01 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define BRAIN_HPP
 
 #include <iostream>
+#include <sstream>
+#include <string>
 #include "Colors.hpp"
 
 class Brain
@@ -23,7 +25,7 @@ private:
 public:
 	Brain();
 	Brain(const Brain &other);
-	Brain operator=(const Brain &other);
+	Brain &operator=(const Brain &other);
 	~Brain();
 };
 

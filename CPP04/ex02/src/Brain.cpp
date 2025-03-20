@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:37:22 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/20 17:53:33 by jteste           ###   ########.fr       */
+/*   Updated: 2025/03/20 18:26:28 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 Brain::Brain()
 {
-	for (size_t i = 0; i < 100; i++)
-		this->_ideas[i] = "Idea_" + std::to_string(i);
+	for (size_t i = 0; i < 100; i++) 
+	{
+        std::ostringstream oss;
+        oss << i;
+        this->_ideas[i] = "Idea_" + oss.str();
+    }
 	std::cout << BRIGHT_GREEN << "Brain created" << RESET << std::endl;
 }
 
@@ -25,7 +29,7 @@ Brain::Brain(const Brain &other)
 		this->_ideas[i] = other._ideas[i];
 }
 
-Brain Brain::operator=(const Brain &other)
+Brain &Brain::operator=(const Brain &other)
 {
 	if (this != &other)
 	{

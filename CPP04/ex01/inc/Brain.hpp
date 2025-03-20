@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:24:57 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/20 17:59:01 by jteste           ###   ########.fr       */
+/*   Updated: 2025/03/20 18:24:18 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
 public:
 	Brain();
 	Brain(const Brain &other);
-	Brain operator=(const Brain &other);
+	Brain &operator=(const Brain &other);
 	~Brain();
 };
 

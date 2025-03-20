@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:37:22 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/20 17:59:41 by jteste           ###   ########.fr       */
+/*   Updated: 2025/03/20 18:26:01 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Brain::Brain(const Brain &other)
 		this->_ideas[i] = other._ideas[i];
 }
 
-Brain Brain::operator=(const Brain &other)
+Brain &Brain::operator=(const Brain &other)
 {
 	if (this != &other)
 	{
