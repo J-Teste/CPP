@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:45:51 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/13 16:56:34 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/16 17:24:37 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class Cat : public Animal
 		~Cat();
 		Cat &operator=(const Cat &other);
 		void makeSound() const;
+		Brain* getBrain() const;
+
 };
 
 #endif

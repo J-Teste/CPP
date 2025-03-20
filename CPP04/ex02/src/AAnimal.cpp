@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 15:30:07 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/19 09:30:57 by hakgyver         ###   ########.fr       */
+/*   Created: 2025/03/11 15:30:58 by hakgyver          #+#    #+#             */
+/*   Updated: 2025/03/19 09:30:26 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "../inc/Animal.hpp"
 
-#include <iostream>
-#include "Colors.hpp"
-#include "Brain.hpp"
-
-class Animal
+Animal::~Animal()
 {
-protected:
-	std::string _type;
-public:
-	Animal();
-	Animal(const Animal &other);
-	Animal &operator=(const Animal &other);
-	virtual ~Animal();
-	void makeSound() const;
-	std::string getType() const;
-};
+	std::cout << RED << "An Animal of type " << _type << " has disapear. (Default)" << RESET << std::endl;
+}
 
-#endif

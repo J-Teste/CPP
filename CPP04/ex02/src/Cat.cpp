@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:44:37 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/16 17:25:07 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/16 18:36:18 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,9 @@ void Cat::makeSound() const
 Brain* Cat::getBrain() const
 {
 	return this->brain;
+}
+
+std::string Cat::getType() const
+{
+	return(this->_type);
 }

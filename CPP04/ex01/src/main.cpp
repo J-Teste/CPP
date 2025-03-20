@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 16:45:42 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/13 17:15:31 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/19 09:35:17 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 
 int main()
 {
-	new Dog;
-	return (0);
+	const int size = 10;
+	Animal* animals[size];
+
+	for (int i = 0; i < size / 2; i++)
+		animals[i] = new Dog();
+	for (int i = size / 2; i < size; i++)
+		animals[i] = new Cat();
+	for (int i = 0; i < size; i++)
+		animals[i]->makeSound();
+	for (int i = 0; i < size; i++)
+		delete animals[i];
+	return 0;
 }

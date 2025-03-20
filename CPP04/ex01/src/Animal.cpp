@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 15:30:58 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/13 16:57:33 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/19 09:23:49 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,20 @@ Animal::Animal() : _type("Spark")
 Animal::Animal(const Animal &other)
 {
 	*this = other;
+	std::cout << GREEN << "An Animal has been created. (Copy)" << RESET << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &other)
 {
 	if (this != &other)
 		this->_type = other._type;
+	std::cout << GREEN << "An Animal has been created. (operator=)" << RESET << std::endl;
 	return(*this);
 }
 
 Animal::~Animal()
 {
-	std::cout << RED << "An Animal of type " << _type << " has disapear." << RESET << std::endl;
+	std::cout << RED << "An Animal of type " << _type << " has disapear. (Default)" << RESET << std::endl;
 }
 
 void Animal::makeSound() const
