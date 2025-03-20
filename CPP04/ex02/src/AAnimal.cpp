@@ -3,16 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 15:30:58 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/19 09:30:26 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:05:25 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Animal.hpp"
+#include "../inc/AAnimal.hpp"
 
-Animal::~Animal()
+
+AAnimal::AAnimal() : _type("Spark")
+{
+	std::cout << GREEN << "An Animal has been created. (Default)" << RESET << std::endl;
+}
+
+AAnimal::AAnimal(const AAnimal &other)
+{
+	*this = other;
+	std::cout << GREEN << "An Animal has been created. (Copy)" << RESET << std::endl;
+}
+
+AAnimal &AAnimal::operator=(const AAnimal &other)
+{
+	if (this != &other)
+		this->_type = other._type;
+	std::cout << GREEN << "An Animal has been created. (operator=)" << RESET << std::endl;
+	return(*this);
+}
+
+AAnimal::~AAnimal()
 {
 	std::cout << RED << "An Animal of type " << _type << " has disapear. (Default)" << RESET << std::endl;
 }

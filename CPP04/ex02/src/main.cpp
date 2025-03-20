@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 16:45:42 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/19 09:27:33 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:03:04 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main()
 {
 	const int size = 10;
-	Animal* animals[size];
+	AAnimal* animals[size];
 	
 	for (int i = 0; i < size / 2; i++)
 		animals[i] = new Dog();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:24:57 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/19 09:36:07 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/20 17:59:01 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define BRAIN_HPP
 
 #include <iostream>
+#include <string>
+#include <sstream>
 #include "Colors.hpp"
 
 class Brain

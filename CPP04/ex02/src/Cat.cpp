@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:44:37 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/16 18:36:18 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:05:32 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat()
 	std::cout << BRIGHT_GREEN << "From the spark of the animal, a Cat is born ! (Default)" << RESET << std::endl;
 }
 
-Cat::Cat(const Cat &other) : Animal(other)
+Cat::Cat(const Cat &other) : AAnimal(other)
 {
 	this->_type = "Cat";
 	std::cout << BRIGHT_GREEN << "From the spark of the animal, a Cat is born ! (Copy)" << RESET << std::endl;
@@ -29,7 +29,7 @@ Cat &Cat::operator=(const Cat &other)
 {
 	if (this != &other)
 	{
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		this->_type = other._type;
 		std::cout << BRIGHT_GREEN << "From the spark of the animal, a Cat is born ! (=)" << RESET << std::endl;
 	}

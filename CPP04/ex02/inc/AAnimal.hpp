@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 15:30:07 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/16 18:36:57 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:02:28 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
 #include <iostream>
 #include "Colors.hpp"
 #include "Brain.hpp"
 
-class Animal
+class AAnimal
 {
 	protected:
 		std::string _type;
 	public:
+		AAnimal();
+		AAnimal(const AAnimal &other);
+		AAnimal &AAnimal::operator=(const AAnimal &other);
 		virtual void makeSound() const = 0;
 		virtual std::string getType() const = 0;
-		virtual ~Animal();
+		virtual ~AAnimal();
 };
 
 #endif
