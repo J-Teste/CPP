@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:26:26 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/13 15:49:36 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:11:33 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Dog::Dog()
 
 Dog::Dog(const Dog &other) : Animal(other)
 {
-	this->_type = "Cat";
+	this->_type = "Dog";
 	std::cout << BRIGHT_GREEN << "From the spark of the animal, a Dog is born ! (Copy)" << RESET << std::endl;
 }
 

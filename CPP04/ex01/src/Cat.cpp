@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:44:37 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/16 17:25:07 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:11:17 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Cat::Cat()
 Cat::Cat(const Cat &other) : Animal(other)
 {
 	this->_type = "Cat";
+	this->brain = new Brain(*other.brain);
 	std::cout << BRIGHT_GREEN << "From the spark of the animal, a Cat is born ! (Copy)" << RESET << std::endl;
 }
 
@@ -31,6 +32,8 @@ Cat &Cat::operator=(const Cat &other)
 	{
 		Animal::operator=(other);
 		this->_type = other._type;
+		delete this->brain;
+		this->brain = new Brain(*other.brain);
 		std::cout << BRIGHT_GREEN << "From the spark of the animal, a Cat is born ! (=)" << RESET << std::endl;
 	}
 	return(*this);
