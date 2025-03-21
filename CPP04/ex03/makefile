@@ -1,17 +1,20 @@
-NAME := Polymorphism
+NAME := Interface_&_recap
 CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -g 
 
 SRCDIR := ./src
 OBJDIR := tmp
 
 SRC := \
 	main.cpp \
-	Animal.cpp \
-	Cat.cpp \
-	Dog.cpp \
-	WrongAnimal.cpp \
-	WrongCat.cpp
+	AMateria.cpp \
+	Character.cpp \
+	Cure.cpp \
+	Ice.cpp \
+	ICharacter.cpp \
+	IMateriaSource.cpp \
+	MateriaSource.cpp
+
 
 SRCS := $(addprefix $(SRCDIR)/, $(SRC))
 

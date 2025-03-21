@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:26:26 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/20 18:10:58 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/20 23:08:03 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,4 @@ Dog::~Dog()
 void Dog::makeSound() const
 {
 	std::cout << YELLOW <<  "Wooof !!" << RESET << std::endl;
-}
-
-Brain* Dog::getBrain() const
-{
-	return this->brain;
-}
-
-std::string Dog::getType() const
-{
-	return(this->_type);
 }

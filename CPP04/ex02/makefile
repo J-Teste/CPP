@@ -1,4 +1,4 @@
-NAME := I_dont_want_to_set_the_world_on_fire
+NAME := Abstract_class
 CXX := c++
 CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -g 
 
@@ -7,7 +7,7 @@ OBJDIR := tmp
 
 SRC := \
 	main.cpp \
-	Animal.cpp \
+	AAnimal.cpp \
 	Cat.cpp \
 	Dog.cpp \
 	Brain.cpp

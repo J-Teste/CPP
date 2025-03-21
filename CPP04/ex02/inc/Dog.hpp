@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:26:43 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/20 18:02:53 by jteste           ###   ########.fr       */
+/*   Updated: 2025/03/20 23:07:44 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ class Dog : public AAnimal
 		~Dog();
 		Dog &operator=(const Dog &other);
 		void makeSound() const;
-		Brain* getBrain() const;
-		std::string getType() const;
 };
 
 #endif

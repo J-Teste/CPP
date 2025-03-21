@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                        :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 15:30:07 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/20 23:07:00 by hakgyver         ###   ########.fr       */
+/*   Created: 2025/03/20 23:26:53 by hakgyver          #+#    #+#             */
+/*   Updated: 2025/03/20 23:33:36 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AANIMAL_HPP
-#define AANIMAL_HPP
+
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
 #include <iostream>
-#include "Colors.hpp"
-#include "Brain.hpp"
+#include "AMateria.hpp"
 
-class AAnimal
+class IMateriaSource
 {
-	protected:
-		std::string _type;
-	public:
-		AAnimal();
-		AAnimal(const AAnimal &other);
-		AAnimal &operator=(const AAnimal &other);
-		virtual void makeSound() const = 0;
-		virtual std::string getType() const;
-		virtual ~AAnimal();
+public:
+virtual ~IMateriaSource() {}
+virtual void learnMateria(AMateria*) = 0;
+virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 #endif

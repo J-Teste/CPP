@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:45:51 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/20 18:02:41 by jteste           ###   ########.fr       */
+/*   Updated: 2025/03/20 23:07:40 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ class Cat : public AAnimal
 		~Cat();
 		Cat &operator=(const Cat &other);
 		void makeSound() const;
-		Brain* getBrain() const;
-		std::string getType() const;
-
 };
 
 #endif

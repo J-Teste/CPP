@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 16:37:22 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/20 18:26:01 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/20 22:41:20 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Brain &Brain::operator=(const Brain &other)
 		for (size_t i = 0; i < 100; i++)
 			this->_ideas[i] = other._ideas[i];
 	}
-	return Brain();
+	return *this;
 }
 
 Brain::~Brain()

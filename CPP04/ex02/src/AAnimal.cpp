@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 15:30:58 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/20 18:05:25 by jteste           ###   ########.fr       */
+/*   Updated: 2025/03/20 23:06:33 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,12 @@ AAnimal &AAnimal::operator=(const AAnimal &other)
 
 AAnimal::~AAnimal()
 {
-	std::cout << RED << "An Animal of type " << _type << " has disapear. (Default)" << RESET << std::endl;
+	std::cout << RED << "An Animal of type " << _type << " has disapear. (Base class)" << RESET << std::endl;
+}
+
+
+std::string AAnimal::getType() const
+{
+	return(this->_type);
 }
 

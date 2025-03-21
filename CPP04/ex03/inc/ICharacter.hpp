@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                        :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 15:30:07 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/20 23:07:00 by hakgyver         ###   ########.fr       */
+/*   Created: 2025/03/20 23:26:50 by hakgyver          #+#    #+#             */
+/*   Updated: 2025/03/20 23:34:02 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AANIMAL_HPP
-#define AANIMAL_HPP
+
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
 #include <iostream>
-#include "Colors.hpp"
-#include "Brain.hpp"
+#include "AMateria.hpp"
 
-class AAnimal
+class ICharacter
 {
-	protected:
-		std::string _type;
-	public:
-		AAnimal();
-		AAnimal(const AAnimal &other);
-		AAnimal &operator=(const AAnimal &other);
-		virtual void makeSound() const = 0;
-		virtual std::string getType() const;
-		virtual ~AAnimal();
+public:
+virtual ~ICharacter() {}
+virtual std::string const & getName() const = 0;
+virtual void equip(AMateria* m) = 0;
+virtual void unequip(int idx) = 0;
+virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif
