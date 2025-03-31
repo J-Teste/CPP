@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 23:26:42 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/20 23:33:47 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/03/21 16:33:23 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,21 @@
 #define AMATERIA_HPP
 
 #include <iostream>
+#include "ICharacter.hpp"
 
 class AMateria
 {
-private:
-	/* data */
+protected:
+	std::string _type;
 public:
-	AMateria(/* args */);
-	~AMateria();
+	AMateria();
+	AMateria(std::string const & type);
+	AMateria(const AMateria& other);
+	AMateria& operator=(const AMateria& other);
+	virtual ~AMateria();
+	std::string const & getType() const;
+	virtual AMateria* clone() const = 0;
+	virtual void use(ICharacter& target);
 };
 
 
