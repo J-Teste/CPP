@@ -6,33 +6,14 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:55:05 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/05/20 14:27:28 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/05/21 13:03:12 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Colors.hpp"
+#include "../inc/Fct.hpp"
 #include <iostream>
 
-
-template<typename T>
-void swap(T &i, T &j)
-{
-	T tmp = i;
-	i = j;
-	j = tmp;
-}
-
-template<typename T>
-T min(T &i, T &j)
-{
-	return(i < j) ? i : j;
-}
-
-template<typename T>
-T max(T &i, T &j)
-{
-	return(i > j) ? i : j;
-}
 
 int main()
 {
@@ -59,7 +40,6 @@ int main()
 	std::cout << "f2 = " << f2 << std::endl;
 	std::cout << "s1 = " << s1 << std::endl;
 	std::cout << "s2 = " << s2 << std::endl;
-	
 	std::cout << "\n---- Min/Max ----\n" << std::endl;
 	std::cout << "i1 = " << i1 << " i2 = " << i2 << std::endl;
 	std::cout << "\n";
@@ -78,3 +58,19 @@ int main()
 	std::cout << "\n";
 	return (0);
 }
+
+// int main( void ) {
+// int a = 2;
+// int b = 3;
+// ::swap( a, b );
+// std::cout << "a = " << a << ", b = " << b << std::endl;
+// std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+// std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+// std::string c = "chaine1";
+// std::string d = "chaine2";
+// ::swap(c, d);
+// std::cout << "c = " << c << ", d = " << d << std::endl;
+// std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+// std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+// return 0;
+// }
