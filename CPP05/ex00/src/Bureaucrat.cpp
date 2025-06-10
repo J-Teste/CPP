@@ -6,12 +6,11 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 21:28:13 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/27 15:16:43 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/05/24 15:56:28 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Bureaucrat.hpp"
-#include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Bozo"), _grade(150)
 {

@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 04:26:58 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/04/16 05:27:26 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/05/29 11:58:21 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Base *generate(void)
 	}
 }
 
-void identify(Base* p) 
+void identify(Base* p)
 {
     if (dynamic_cast<A*>(p)) 
         std::cout << "A" << std::endl;
@@ -51,16 +51,27 @@ void identify(Base* p)
         std::cout << "Unknown" << std::endl;
 }
 
-void identify(Base& p) 
+void identify(Base& p)
 {
-    if (dynamic_cast<A*>(&p))
-        std::cout << "A" << std::endl;
-    else if (dynamic_cast<B*>(&p))
-        std::cout << "B" << std::endl;
-    else if (dynamic_cast<C*>(&p))
-        std::cout << "C" << std::endl;
-    else
-        std::cout << "Unknown" << std::endl;
+	try {
+		(void)dynamic_cast<A&>(p);
+		std::cout << "A" << std::endl;
+		return;
+	} catch (std::bad_cast&) {}
+
+	try {
+		(void)dynamic_cast<B&>(p);
+		std::cout << "B" << std::endl;
+		return;
+	} catch (std::bad_cast&) {}
+
+	try {
+		(void)dynamic_cast<C&>(p);
+		std::cout << "C" << std::endl;
+		return;
+	} catch (std::bad_cast&) {}
+
+	std::cout << "Unknown" << std::endl;
 }
 
 int main()
@@ -72,5 +83,6 @@ int main()
 	identify(obj);
 	std::cout << YELLOW << "Identification par reference\n" << RESET  << "Type : ";
 	identify(*obj);
+	delete(obj);
 	return (0);
 }

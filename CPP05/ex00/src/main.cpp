@@ -6,12 +6,12 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 16:58:23 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/05/19 16:34:34 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/05/24 15:59:28 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "../inc/Bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 
 void sep(std::string s)
 {

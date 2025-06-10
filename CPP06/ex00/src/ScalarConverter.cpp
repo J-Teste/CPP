@@ -6,12 +6,19 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:03:37 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/04/16 03:25:45 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/06/10 15:33:30 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ScalarConverter.hpp"
-
+#include <iostream>
+#include <iomanip>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <limits>
+#include <climits>
+#include <cerrno>
 
 ScalarConverter::ScalarConverter()
 {
@@ -22,40 +29,43 @@ ScalarConverter::ScalarConverter(ScalarConverter const &other)
 	(void)other;
 }
 
-ScalarConverter &ScalarConverter::operator=(ScalarConverter const &other)
+ScalarConverter &ScalarConverter::operator=(ScalarConverter const &other) 
 {
 	(void)other;
-	return(*this);
+	return (*this);
 }
 
 ScalarConverter::~ScalarConverter()
 {
 }
 
-/*-------------------------------------------------------------------------------*/
-
-bool isChar(std::string const &s) 
+bool isChar(std::string const &s)
 {
 	return (s.length() == 1 && !std::isdigit(s[0]));
 }
 
-bool isInt(std::string const &s) 
+bool isInt(std::string const &s)
 {
+	errno = 0;
 	char *end;
-	std::strtol(s.c_str(), &end, 10);
-	return (*end == '\0');
+	long n = std::strtol(s.c_str(), &end, 10);
+	if(*end == '\0' || errno == ERANGE || n < INT_MIN || n > INT_MAX)
+		return(false);
+	return(true);
 }
 
-bool isFloat(std::string const &s) 
+bool isFloat(std::string const &s)
 {
 	if (s == "-inff" || s == "+inff" || s == "nanf")
 		return (true);
 	char *end;
-	std::strtof(s.c_str(), &end); 
-	return (*end == 'f');
+	std::strtof(s.c_str(), &end);
+	if ((*end != 'f' && *end != '\0') || errno == ERANGE)
+		return (false);
+	return (true);
 }
 
-bool isDouble(std::string const &s) 
+bool isDouble(std::string const &s)
 {
 	if (s == "-inf" || s == "+inf" || s == "nan")
 		return (true);
@@ -64,7 +74,7 @@ bool isDouble(std::string const &s)
 	return (*end == '\0');
 }
 
-Literal detectType(std::string const &s) 
+Literal detectType(std::string const &s)
 {
 	if (isChar(s))
 		return (CHAR);
@@ -77,7 +87,7 @@ Literal detectType(std::string const &s)
 	return (INVALID);
 }
 
-void printConversions(char c) 
+void printConversions(char c)
 {
 	std::cout << "char: '" << c << "'" << std::endl;
 	std::cout << "int: " << static_cast<int>(c) << std::endl;
@@ -85,7 +95,7 @@ void printConversions(char c)
 	std::cout << "double: " << static_cast<double>(c) << std::endl;
 }
 
-void printConversions(int n) 
+void printConversions(int n)
 {
 	if (n >= 32 && n <= 126)
 		std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
@@ -93,12 +103,13 @@ void printConversions(int n)
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: impossible" << std::endl;
+
 	std::cout << "int: " << n << std::endl;
 	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(n) << "f" << std::endl;
 	std::cout << "double: " << static_cast<double>(n) << std::endl;
 }
 
-void printConversions(float f) 
+void printConversions(float f)
 {
 	if (std::isnan(f) || std::isinf(f) || f < 0 || f > 255)
 		std::cout << "char: impossible" << std::endl;
@@ -111,6 +122,7 @@ void printConversions(float f)
 		std::cout << "int: " << static_cast<int>(f) << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
+
 	std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
 	std::cout << "double: " << static_cast<double>(f) << std::endl;
 }
@@ -123,21 +135,20 @@ void printConversions(double d)
 		std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
-
 	if (d >= static_cast<double>(std::numeric_limits<int>::min()) && d <= static_cast<double>(std::numeric_limits<int>::max()))
 		std::cout << "int: " << static_cast<int>(d) << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
+
 	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(d) << "f" << std::endl;
 	std::cout << "double: " << d << std::endl;
 }
 
-
-void ScalarConverter::convert(std::string const &literal) 
+void ScalarConverter::convert(std::string const &literal)
 {
 	Literal type = detectType(literal);
-	switch (type) 
-	{
+
+	switch (type) {
 		case CHAR:
 			printConversions(literal[0]);
 			break;

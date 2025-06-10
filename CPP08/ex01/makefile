@@ -1,14 +1,12 @@
-NAME := Bureaucrat
+NAME := Span
 CXX := c++
-CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -g -I inc
+CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -g 
 
 SRCDIR := ./src
 OBJDIR := tmp
 
 SRC := \
 	main.cpp \
-	Bureaucrat.cpp
-
 
 
 SRCS := $(addprefix $(SRCDIR)/, $(SRC))

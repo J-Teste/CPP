@@ -6,7 +6,7 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 07:36:49 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/03/29 09:30:00 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/05/24 16:08:51 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("Rob
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm(other), _target(other._target)
 {
 }
+
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
 {
 	if (this != &other)
