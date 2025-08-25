@@ -1,6 +1,6 @@
 NAME := Easy_Find
 CXX := c++
-CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -g 
+CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -g -Iinc
 
 SRCDIR := ./src
 OBJDIR := tmp

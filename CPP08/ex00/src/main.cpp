@@ -6,12 +6,12 @@
 /*   By: hakgyver <hakgyver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:39:11 by hakgyver          #+#    #+#             */
-/*   Updated: 2025/05/23 13:51:53 by hakgyver         ###   ########.fr       */
+/*   Updated: 2025/08/05 14:08:39 by hakgyver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "../inc/easyfind.hpp"
+#include "easyfind.hpp"
 
 int main()
 {

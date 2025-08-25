@@ -1,4 +1,4 @@
-NAME := Span
+NAME := Mutated_abomination
 CXX := c++
 CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -g -Iinc
 
@@ -7,7 +7,6 @@ OBJDIR := tmp
 
 SRC := \
 	main.cpp \
-	Span.cpp
 
 
 SRCS := $(addprefix $(SRCDIR)/, $(SRC))
